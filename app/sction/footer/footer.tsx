@@ -2,12 +2,19 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Footer() {
   const { language } = useLanguage();
 
   const isArabic = language === "ar";
+
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const getPath = (path: string) =>
     `/${language}${path === "/" ? "" : path}`;
@@ -76,14 +83,14 @@ export default function Footer() {
       {/* TOP CTA */}
 
       <div className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-[#071626] to-[#020609] px-5 py-16 text-center">
-
         <div className="absolute left-1/2 top-0 h-48 w-96 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[100px]" />
 
         <div className="relative mx-auto max-w-3xl">
-
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-green-400/20 bg-green-400/5 px-4 py-2 text-xs text-green-400">
             <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-            {isArabic ? "اكتشفي عالم الجمال والتكنولوجيا" : "Discover Beauty & Technology"}
+            {isArabic
+              ? "اكتشفي عالم الجمال والتكنولوجيا"
+              : "Discover Beauty & Technology"}
           </div>
 
           <h2 className="mb-4 text-2xl font-extrabold md:text-4xl">
@@ -105,20 +112,17 @@ export default function Footer() {
             {isArabic ? "ابدئي التجربة الآن" : "Start Your Experience"}
             <span>↗</span>
           </Link>
-
         </div>
       </div>
 
       {/* FOOTER CONTENT */}
 
       <div className="relative mx-auto max-w-[1450px] px-6 py-14 md:px-10">
-
         <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
 
           {/* BRAND */}
 
           <div className="col-span-2 lg:col-span-1">
-
             <Link
               href={getPath("/")}
               className="mb-5 inline-flex items-center gap-2 text-2xl font-extrabold"
@@ -137,26 +141,24 @@ export default function Footer() {
 
             <div className="mt-6 flex items-center gap-2 text-xs text-cyan-400">
               <span className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_10px_#00ff88]" />
-              {isArabic ? "الجمال بتقنيات المستقبل" : "Beauty Powered by Future Tech"}
+              {isArabic
+                ? "الجمال بتقنيات المستقبل"
+                : "Beauty Powered by Future Tech"}
             </div>
-
           </div>
 
           {/* FOOTER GROUPS */}
 
           {footerGroups.map((group) => (
             <div key={group.title.en}>
-
               <h3 className="mb-6 text-sm font-bold text-white">
                 <span className="mb-3 block h-[2px] w-8 rounded-full bg-gradient-to-r from-green-400 to-cyan-400" />
                 {group.title[language]}
               </h3>
 
               <ul className="space-y-4">
-
                 {group.links.map((link, index) => (
                   <li key={`${group.title.en}-${index}`}>
-
                     <Link
                       href={getPath(link.href)}
                       className="group flex items-center gap-2 text-xs text-gray-400 transition duration-300 hover:translate-x-[-3px] hover:text-green-400"
@@ -166,23 +168,17 @@ export default function Footer() {
                       </span>
 
                       {link[language]}
-
                     </Link>
-
                   </li>
                 ))}
-
               </ul>
-
             </div>
           ))}
-
         </div>
 
         {/* NEWSLETTER */}
 
         <div className="mt-14 rounded-2xl border border-cyan-400/15 bg-gradient-to-r from-[#071626] to-[#06121d] p-6 md:flex md:items-center md:justify-between md:gap-8">
-
           <div className="mb-5 md:mb-0">
             <h3 className="mb-2 font-bold text-green-400">
               {isArabic ? "كوني أول من يعرف جديدنا" : "Stay Updated"}
@@ -202,15 +198,12 @@ export default function Footer() {
             {isArabic ? "اكتشفي آخر الأخبار" : "Explore Latest News"}
             <span>↗</span>
           </Link>
-
         </div>
 
         {/* SOCIAL + COPYRIGHT */}
 
         <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
-
           <div className="flex flex-wrap items-center justify-center gap-4">
-
             {socialLinks.map((social) => (
               <a
                 key={social.name}
@@ -222,11 +215,10 @@ export default function Footer() {
                 {social.icon}
               </a>
             ))}
-
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-gray-500">
-            <span>© {new Date().getFullYear()}</span>
+            <span>© {year ?? ""}</span>
             <span className="font-bold text-green-400">Orvelia</span>
             <span>
               {isArabic
@@ -234,11 +226,8 @@ export default function Footer() {
                 : "All Rights Reserved."}
             </span>
           </div>
-
         </div>
-
       </div>
-
     </footer>
   );
 }
