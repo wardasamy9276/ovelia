@@ -16,7 +16,7 @@ function page() {
   return (
     <div>
       <Hore />
-      <ExperienceSection  />
+      <ExperienceSection   />
       <BeautyServicesSection/>
       <BeautySlider />
       <BeautyCategories />
