@@ -1,26 +1,142 @@
+
 @import "tailwindcss";
 
+/* تفعيل Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================
+   LIGHT MODE
+========================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --abyss-green: #054340;
+  --sunkissed-beige: #E9AC5D;
+  --seafoam-green: #9EB2B0;
+  --travertine: #E9D6B8;
+
+  --background: #F7F1E7;
+  --foreground: #054340;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #054340;
+  --foreground: #E9D6B8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   DARK MODE
+========================= */
+html.dark {
+  color-scheme: dark;
+
+  --background: #101B18;
+  --foreground: #F0F5EF;
+
+  --surface: #192923;
+  --surface-secondary: #22372D;
+
+  --border: rgba(181, 200, 181, 0.2);
+
+  --primary: #B5C8B5;
+  --secondary: #A5B88C;
+  --accent: #697B55;
+  --muted: #B5C8B5;
+
+  --heading: #FFFFFF;
+  --card: #192923;
+}
+
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
+
+/* =========================
+   HEADINGS
+========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+}
+
+/* =========================
+   CARDS & SURFACES
+========================= */
+.card,
+.surface {
+  background-color: var(--card);
+  border-color: var(--border);
+}
+
+/* =========================
+   LINKS & BUTTONS
+========================= */
+a,
+button {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================
+   TEXT SELECTION
+========================= */
+::selection {
+  background-color: #697B55;
+  color: #FFFFFF;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #697B55;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #294B3B;
+}
+
+/* إخفاء السكرول مع الاحتفاظ بالتمرير */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
