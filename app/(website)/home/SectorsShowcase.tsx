@@ -1142,7 +1142,7 @@ export default function SectorsFlip() {
       description: isArabic
         ? "يجرّب العميل المكياج مباشرة على وجهه ويقارن الدرجات قبل الشراء."
         : "Customers can try makeup directly on their faces and compare different shades before making a purchase.",
-      image: "/images/beauty.jpg",
+      image: "/assets/slider/images6.jpg",
       href: "/sectors/beauty",
       points: isArabic
         ? ["مطابقة درجة البشرة", "مقارنة قبل وبعد", "حفظ الإطلالات"]
@@ -1156,7 +1156,7 @@ export default function SectorsFlip() {
       description: isArabic
         ? "تجربة الخواتم والقلائد والأقراط والساعات في الوقت الحقيقي وتنسيقها معًا."
         : "Virtually try on rings, necklaces, earrings, and watches in real time, and mix and match different pieces.",
-      image: "/images/jewelry.jpg",
+      image: "/assets/img/images13.jpg",
       href: "/sectors/jewelry",
       points: isArabic
         ? ["تتبع اليد والرقبة والأذن", "تنسيق عدة قطع", "مشاركة الصورة"]
@@ -1170,7 +1170,7 @@ export default function SectorsFlip() {
       description: isArabic
         ? "دمج التجربة الافتراضية في صفحات المنتجات بسطر برمجي واحد."
         : "Integrate virtual try-on experiences into your product pages with a simple line of code.",
-      image: "/images/ecommerce.jpg",
+      image: "/assets/img/ava.webp",
       href: "/sectors/ecommerce",
       points: isArabic
         ? ["دمج بسطر واحد", "لوحة تحليلات", "متوافق مع المنصات الشائعة"]
@@ -1184,7 +1184,7 @@ export default function SectorsFlip() {
       description: isArabic
         ? "مرايا ذكية داخل الفروع بتجربة موحدة مع المتجر الإلكتروني."
         : "Smart mirrors inside physical stores provide a unified shopping experience connected to your online store.",
-      image: "/images/retail.jpg",
+      image: "/assets/img/img-2.webp",
       href: "/sectors/retail",
       points: isArabic
         ? ["شاشات داخل الفرع", "مزامنة المخزون", "تقارير لكل فرع"]

@@ -8,7 +8,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 const slides = [
   {
     id: 1,
-    image: "./img/left.webp",
+    image: "/assets/slider/images2.jpg",
     titleAr: "الجمال الذكي",
     titleEn: "Intelligent Beauty",
     descAr: "اكتشفي مستقبلاً جديداً يجمع بين الجمال والذكاء الاصطناعي.",
@@ -17,7 +17,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "./imgs/center.webp",
+    image: "/assets/slider/images7.jpg",
     titleAr: "تحليل البشرة",
     titleEn: "Smart Skin Analysis",
     descAr: "تحليل متطور يساعدك على فهم احتياجات بشرتك.",
@@ -26,7 +26,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "./imgs/mix&match-v2.webp",
+    image: "/assets/slider/Untitled3.png",
     titleAr: "تجربة الجمال",
     titleEn: "Beauty Experience",
     descAr: "تجربة استثنائية مصممة لإبراز جمالك الطبيعي.",
@@ -35,7 +35,7 @@ const slides = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1000&q=90",
+    image: "/assets/slider/photo-1485230895905-ec40ba36b9bc.jpg",
     titleAr: "اكتشفي جمالك",
     titleEn: "Discover Your Beauty",
     descAr: "اكتشفي حلولاً مبتكرة تناسب شخصيتك واحتياجاتك.",
@@ -44,7 +44,7 @@ const slides = [
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1000&q=90",
+    image: "/assets/slider/photo-1487412720507-e7ab37603c6f5.jpg",
     titleAr: "مستقبل التجميل",
     titleEn: "Future Of Beauty",
     descAr: "حيث تلتقي التكنولوجيا مع أحدث مفاهيم الجمال.",
@@ -53,7 +53,7 @@ const slides = [
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1000&q=90",
+    image: "/assets/slider/photo-1508214751196-bcfd4ca60f9111.jpg",
     titleAr: "العناية بالبشرة",
     titleEn: "Skincare Excellence",
     descAr: "امنحي بشرتك العناية التي تستحقها مع حلول متطورة.",
@@ -62,7 +62,7 @@ const slides = [
   },
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1000&q=90",
+    image: "/assets/slider/photo-1512316609839-ce289d3eba0a.jpg",
     titleAr: "عالم المكياج",
     titleEn: "Makeup Universe",
     descAr: "اكتشفي إطلالات متنوعة تعكس جمالك وشخصيتك.",
@@ -71,7 +71,7 @@ const slides = [
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1000&q=90",
+    image: "/assets/slider/photo-1522335789203-aabd1fc54bc9.jpg",
     titleAr: "جمال بلا حدود",
     titleEn: "Beauty Without Limits",
     descAr: "تجربة جديدة تمنحك مساحة لاكتشاف أسلوبك الخاص.",
@@ -80,7 +80,7 @@ const slides = [
   },
   {
     id: 9,
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1000&q=90",
+    image: "/assets/slider/photo-1570172619644-dfd03ed5d881.jpg",
     titleAr: "إطلالة متألقة",
     titleEn: "Radiant Look",
     descAr: "أبرزي جمالك الطبيعي بإطلالة مشرقة ومميزة.",
@@ -89,7 +89,7 @@ const slides = [
   },
   {
     id: 10,
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1000&q=90",
+    image: "/assets/img/mix&match-v2.webp",
     titleAr: "أناقة عصرية",
     titleEn: "Modern Elegance",
     descAr: "اكتشفي مزيجاً من الأناقة العصرية واللمسات الجمالية.",
@@ -98,7 +98,7 @@ const slides = [
   },
   {
     id: 11,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=90",
+    image: "/assets/img/left.webp",
     titleAr: "جمالك الطبيعي",
     titleEn: "Natural Beauty",
     descAr: "لأن جمالك الطبيعي يستحق أن يظهر بأفضل صورة.",
@@ -107,7 +107,8 @@ const slides = [
   },
   {
     id: 12,
-    image: "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=1000&q=90",
+    image: "/assets/slider/images6.jpg",
+
     titleAr: "اكتشفي أسلوبك",
     titleEn: "Find Your Style",
     descAr: "اختاري ما يناسبك واكتشفي أسلوباً يعبر عنك.",
@@ -116,7 +117,7 @@ const slides = [
   },
   {
     id: 13,
-    image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=1000&q=90",
+    image: "/assets/slider/images1.jpg",
     titleAr: "أسرار الجمال",
     titleEn: "Beauty Secrets",
     descAr: "تعرفي على أسرار العناية والجمال بأسلوب أكثر ذكاءً.",
@@ -125,7 +126,7 @@ const slides = [
   },
   {
     id: 14,
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=1000&q=90",
+    image: "/assets/img/Untitled.png",
     titleAr: "بشرة أكثر نضارة",
     titleEn: "Fresh Skin",
     descAr: "اكتشفي طرقاً مبتكرة لتعزيز نضارة بشرتك وإشراقها.",
@@ -134,7 +135,7 @@ const slides = [
   },
   {
     id: 15,
-    image: "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?w=1000&q=90",
+    image: "/assets/slider/Untitled3.png",
     titleAr: "لمسات من الفخامة",
     titleEn: "Luxury Touch",
     descAr: "تفاصيل جمالية راقية تمنحك تجربة مختلفة.",
@@ -143,7 +144,8 @@ const slides = [
   },
   {
     id: 16,
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1000&q=90",
+    image: "/assets/slider/Untitled1.png",
+
     titleAr: "فن المكياج",
     titleEn: "The Art Of Makeup",
     descAr: "اكتشفي فنون المكياج التي تبرز ملامحك بأناقة.",
@@ -152,7 +154,7 @@ const slides = [
   },
   {
     id: 17,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=90",
+    image: "/assets/img/1790069732596-fe9a32ab43dffee47917a1f0d4f11448.png",
     titleAr: "لحظات من العناية",
     titleEn: "Moments Of Care",
     descAr: "اجعلي العناية بنفسك جزءاً من يومك وتجربتك.",
@@ -161,7 +163,7 @@ const slides = [
   },
   {
     id: 18,
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1000&q=90",
+    image: "/assets/img/center.webp",
     titleAr: "عالم مستحضرات التجميل",
     titleEn: "Beauty Products",
     descAr: "اكتشفي عالماً من المنتجات التي تناسب احتياجاتك.",
@@ -170,7 +172,7 @@ const slides = [
   },
   {
     id: 19,
-    image: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=1000&q=90",
+    image: "/assets/img/right.webp",
     titleAr: "تقنيات الجمال",
     titleEn: "Beauty Technology",
     descAr: "تقنيات حديثة تجعل تجربة العناية أكثر سهولة وذكاءً.",
@@ -179,7 +181,7 @@ const slides = [
   },
   {
     id: 20,
-    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=1000&q=90",
+    image: "/assets/imgs/center.webp",
     titleAr: "تألقي بطريقتك",
     titleEn: "Shine Your Way",
     descAr: "كوني أنتِ، واكتشفي تجربة جمال تعبر عن تميزك.",

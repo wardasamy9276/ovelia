@@ -11,8 +11,7 @@ const categories = [
     titleEn: "Skin Care",
     descAr: "اكتشفي أسرار البشرة الصحية والنضرة مع حلول العناية الذكية.",
     descEn: "Discover the secrets of healthy, glowing skin with intelligent care solutions.",
-    image:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&q=85",
+    image: "/assets/imgs/left.webp",
     href: "/skin-care",
     icon: "✧",
   },
@@ -22,8 +21,7 @@ const categories = [
     titleEn: "Makeup",
     descAr: "عبّري عن جمالك بإطلالات مميزة تجمع بين الأناقة والإبداع.",
     descEn: "Express your beauty with unique looks that combine elegance and creativity.",
-    image:
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900&q=85",
+    image: "/assets/img/1790069732596-fe9a32ab43dffee47917a1f0d4f11448.png",
     href: "/makeup",
     icon: "✦",
   },
@@ -33,8 +31,7 @@ const categories = [
     titleEn: "Hair Care",
     descAr: "رحلة متكاملة لشعر أكثر صحة ولمعانًا وحيوية.",
     descEn: "A complete journey to healthier, shinier and more vibrant hair.",
-    image:
-      "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&q=85",
+    image: "/assets/img/Untitled1.png",
     href: "/hair-care",
     icon: "❋",
   },
@@ -44,11 +41,51 @@ const categories = [
     titleEn: "Fragrances",
     descAr: "اختاري عطرك الخاص واتركي انطباعًا لا يُنسى.",
     descEn: "Find your signature scent and leave an unforgettable impression.",
-    image:
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&q=85",
+    image: "/assets/img/Untitled3.png",
     href: "/fragrances",
     icon: "◇",
   },
+  // {
+  //   id: "05",
+  //   titleAr: "العناية بالجسم",
+  //   titleEn: "Body Care",
+  //   descAr: "دلّلي بشرتك بروتين متكامل يمنح جسمك النعومة والترطيب.",
+  //   descEn: "Pamper your skin with a complete routine for softness and hydration.",
+  //   image: "/assets/img/body-care.png",
+  //   href: "/body-care",
+  //   icon: "❀",
+  // },
+  // {
+  //   id: "06",
+  //   titleAr: "منتجات الشفاه",
+  //   titleEn: "Lip Care",
+  //   descAr: "اكتشفي ألوانًا وتركيبات تمنح شفتيك الجمال والترطيب.",
+  //   descEn: "Explore shades and formulas that bring beauty and hydration to your lips.",
+  //   image: "/assets/img/lip-care.png",
+  //   href: "/lip-care",
+  //   icon: "♡",
+  // },
+  // {
+  //   id: "07",
+  //   titleAr: "العناية بالأظافر",
+  //   titleEn: "Nail Care",
+  //   descAr: "أضيفي لمسة من الأناقة لأظافرك مع العناية والجمال.",
+  //   descEn: "Add a touch of elegance to your nails with beauty and care.",
+  //   image: "/assets/img/nail-care.png",
+  //   href: "/nail-care",
+  //   icon: "✧",
+  // },
+  // {
+  //   id: "08",
+  //   titleAr: "أدوات التجميل",
+  //   titleEn: "Beauty Tools",
+  //   descAr: "اكتشفي أدوات مبتكرة تجعل روتين جمالك أسهل وأكثر احترافية.",
+  //   descEn: "Discover innovative tools that make your beauty routine easier and more professional.",
+  //   image: "/assets/img/beauty-tools.png",
+  //   href: "/beauty-tools",
+  //   icon: "✦",
+  // },
+
 ];
 
 export default function BeautyCategories() {

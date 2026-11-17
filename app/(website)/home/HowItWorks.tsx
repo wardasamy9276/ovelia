@@ -25,7 +25,7 @@ const steps: Step[] = [
       ar: "تتعرف خوارزميات الذكاء الاصطناعي على معالم الوجه والعينين والشفاه والبشرة، وكذلك اليد والرقبة والأذن، وتتبعها في الوقت الفعلي. فيبقى المنتج، سواء كان أحمر شفاه أو ظلالًا أو قلادة أو نظارة، ثابتًا في مكانه الصحيح بينما يتحرك العميل أو يميل أو يلتفت، وهذا ما يجعل التجربة ثابتة ومقنعة.",
       en: "AI algorithms detect facial landmarks, eyes, lips, and skin, as well as hands, neck, and ears, tracking them in real time. Products such as lipstick, eyeshadow, necklaces, or glasses stay accurately positioned as customers move, tilt, or turn their heads, creating a stable and convincing experience.",
     },
-    image: "/images/how/tracking.png",
+    image: "/assets/imgs/features-section-6.webp",
     label: {
       ar: "تناسق طبيعي",
       en: "Natural Alignment",
@@ -45,7 +45,7 @@ const steps: Step[] = [
       ar: "يعرض الواقع المعزز المنتج ثلاثي الأبعاد على بث الكاميرا المباشر للعميل، ويتفاعل مع الإضاءة وزاوية الرؤية والحركة، فيبدو المكياج أو القطعة وكأنها مطبّقة فعلًا. وتعمل التجربة مباشرة عبر المتصفح على الهاتف والكمبيوتر بدون الحاجة لتحميل تطبيق.",
       en: "Augmented reality overlays 3D products onto the customer's live camera feed, responding to lighting, viewing angles, and movement. Makeup or accessories appear as if they were actually applied or worn. The experience runs directly in the browser on mobile devices and computers, with no app download required.",
     },
-    image: "/images/how/ar.png",
+    image: "/assets/img1/retail.webp",
     label: {
       ar: "واقعية حقيقية",
       en: "True-to-Life Experience",
@@ -65,7 +65,7 @@ const steps: Step[] = [
       ar: "يحاكي هذا الأسلوب تفاعل المواد مع الضوء، مثل لمعان الشفاه ونعومة البودرة وبريق الذهب وملمس الجلد والقماش، مع الضوء والظل، فيرى العميل لمعانًا وعمقًا وملمسًا قريبًا من الواقع. وهذا يساعده على الحكم على جودة المنتج قبل الطلب، فيقلل احتمال المرتجعات.",
       en: "This technique simulates how materials interact with light, recreating details such as lip gloss, powder softness, gold reflections, and the textures of leather and fabric. Through realistic lighting and shadows, customers can experience lifelike shine, depth, and texture, helping them evaluate product quality before purchasing and potentially reducing returns.",
     },
-    image: "/images/how/pbr.png",
+    image: "/assets/img/lenses-middle.webp",
     label: {
       ar: "تقنية ذكية",
       en: "Smart Technology",
@@ -117,7 +117,7 @@ export default function HowItWorks() {
 
           <h2 className="text-center text-2xl font-semibold text-fg sm:text-4xl">
             {isArabic
-              ? "كيف تعمل التجربة الافتراضية بالذكاء الاصطناعي؟"
+              ? "Orvelia"
               : "How Does the AI Virtual Experience Work?"}
           </h2>
 

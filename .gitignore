@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/public/assets/Video/face-makeup-banner_1.mp4
+/public/assets/slider/hair highlight card .mp4
+/public/assets/Video/neck-accessories-hero.mp4

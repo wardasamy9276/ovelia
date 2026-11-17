@@ -128,7 +128,7 @@ button {
 }
 
 /* إخفاء السكرول مع الاحتفاظ بالتمرير */
-html,
+/* html,
 body {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -137,6 +137,22 @@ body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
+} */
+
+
+@keyframes beautyLabel {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.25;
+    transform: translateY(-5px);
+  }
 }
 
-
+.beauty-label-animation {
+  display: inline-block;
+  animation: beautyLabel 2.5s ease-in-out infinite;
+}

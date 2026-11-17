@@ -37,11 +37,13 @@ export default function Hero() {
               <span className="relative h-3 w-3 rounded-full bg-emerald-500" />
             </span>
 
-            <span className="text-xs font-bold tracking-[2px] text-emerald-700 dark:text-emerald-400">
-              {isArabic
-                ? "عالم جديد من الجمال والابتكار"
-                : "A NEW WORLD OF BEAUTY & INNOVATION"}
-            </span>
+        <span
+  className="beauty-label-animation text-xs font-bold tracking-[2px] text-emerald-700 dark:text-emerald-400"
+>
+  {isArabic
+    ? "عالم جديد من الجمال والابتكار"
+    : "A NEW WORLD OF BEAUTY & INNOVATION"}
+</span>
           </div>
 
           {/* Main Heading */}

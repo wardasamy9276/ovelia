@@ -30,7 +30,7 @@ const experiences: Experience[] = [
       ar: "تجربة أحمر الشفاه الافتراضية",
       en: "Virtual Lipstick Try-On",
     },
-    image: "/images/makeup/lipstick.jpg",
+   image: "/assets/img/imagesw1.jpg",
     features: {
       ar: [
         { title: "محرك انعكاس لامع", text: "يعيد إنشاء لمعان وتشطيب كل تركيبة بدقة عالية." },
@@ -52,7 +52,7 @@ const experiences: Experience[] = [
       ar: "تجربة ظلال العيون الافتراضية",
       en: "Virtual Eyeshadow Try-On",
     },
-    image: "/images/makeup/eyeshadow.jpg",
+    image: "/assets/imgs/center.webp",
     features: {
       ar: [
         { title: "تدرجات لونية ناعمة", text: "دمج الألوان وتدرجها على الجفن بشكل واقعي وسلس." },
@@ -74,7 +74,7 @@ const experiences: Experience[] = [
       ar: "تجربة كريم الأساس الافتراضية",
       en: "Virtual Foundation Try-On",
     },
-    image: "/images/makeup/foundation.jpg",
+    image: "/assets/slider/imagesa1.jpg",
     features: {
       ar: [
         { title: "مطابقة درجة البشرة", text: "يقترح الدرجة الأنسب بناءً على لون البشرة ودرجة اللون الفرعي." },
@@ -345,20 +345,8 @@ export default function MakeupExperiences() {
             aria-label={isArabic ? "التالي" : "Next"}
             className="absolute -left-4 top-1/2 z-10 hidden size-11 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface text-fg shadow-lg transition-colors hover:border-accent hover:text-accent lg:grid"
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden
-            >
-              <path
-                d="m15 6-6 6 6 6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          
+          
           </button>
 
           <ul

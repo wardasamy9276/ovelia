@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -42,7 +41,7 @@ const items: Item[] = [
       "Natural body and movement interaction",
       "Support for multiple lengths and sizes",
     ],
-    image: "/images/neck/pendant.png",
+    image: "/assets/imgs/mix&match-v2.webp",
     demoHref: "/demo/pendants",
     howHref: "/how-it-works",
   },
@@ -66,7 +65,7 @@ const items: Item[] = [
       "Easy switching between styles and materials",
       "No app download required",
     ],
-    image: "/images/neck/necklace.png",
+    image: "/assets/slider/images2.jpg",
     demoHref: "/demo/necklaces",
     howHref: "/how-it-works",
   },
@@ -90,7 +89,7 @@ const items: Item[] = [
       "Adjustable sizes and thickness",
       "Multiple colors and materials",
     ],
-    image: "/images/neck/choker.png",
+    image: "/assets/slider/images1.jpg",
     demoHref: "/demo/chokers",
     howHref: "/how-it-works",
   },
@@ -114,7 +113,7 @@ const items: Item[] = [
       "Switch between colors and patterns",
       "Works directly in the browser",
     ],
-    image: "/images/neck/scarf.png",
+    image: "/assets/slider/images2.jpg",
     demoHref: "/demo/scarves",
     howHref: "/how-it-works",
   },
@@ -139,7 +138,6 @@ export default function NeckAccessories() {
 
   useEffect(() => {
     document.documentElement.style.overflowX = "clip";
-
     return () => {
       document.documentElement.style.overflowX = "";
     };
@@ -150,15 +148,16 @@ export default function NeckAccessories() {
       dir={isArabic ? "rtl" : "ltr"}
       lang={language}
       className="relative overflow-hidden px-5 py-20"
+      style={{ backgroundColor: "var(--color-bg-primary)" }}
     >
       <header className="mx-auto mb-12 max-w-3xl text-center">
-        <h2 className="text-3xl font-semibold text-fg sm:text-5xl">
+        <h2 className="text-3xl font-semibold sm:text-5xl" style={{ color: "var(--color-text-main)" }}>
           {isArabic
             ? "لمسات نهائية أنيقة بأسلوب ذكي"
             : "Elegant Finishing Touches, Powered by Smart Technology"}
         </h2>
 
-        <p className="mt-5 text-base leading-8 text-muted sm:text-lg">
+        <p className="mt-5 text-base leading-8 sm:text-lg" style={{ color: "var(--color-text-muted)" }}>
           {isArabic
             ? "كل ما يحتاجه عملاؤك لاستعراض إكسسوارات الرقبة بدقة وواقعية في منصة رقمية سلسة."
             : "Everything your customers need to explore neck accessories with precision and realism through a seamless digital platform."}
@@ -170,7 +169,8 @@ export default function NeckAccessories() {
         <div className="relative order-1 mx-auto aspect-[4/5] w-full max-w-lg lg:max-w-none">
           <div
             aria-hidden
-            className="absolute inset-x-10 bottom-0 top-10 -z-10 rounded-full bg-accent/10 blur-[100px]"
+            className="absolute inset-x-10 bottom-0 top-10 -z-10 rounded-full blur-[100px]"
+            style={{ backgroundColor: "rgba(105, 123, 85, 0.15)" }}
           />
 
           {items.map((it, i) => (
@@ -221,42 +221,47 @@ export default function NeckAccessories() {
                   aria-hidden={!isActive}
                   onClick={() => !isActive && setActive(i)}
                   className={[
-                    "absolute left-1/2 top-0 flex h-[590px] w-[min(82vw,330px)] flex-col rounded-2xl border bg-surface/90 p-6 text-center backdrop-blur transition-all duration-700 ease-out",
+                    "absolute left-1/2 top-0 flex h-[590px] w-[min(82vw,330px)] flex-col rounded-2xl border p-6 text-center backdrop-blur transition-all duration-700 ease-out",
                     isActive
-                      ? "border-highlight shadow-[0_0_40px_-12px_var(--highlight)]"
-                      : "cursor-pointer border-line",
+                      ? "shadow-2xl"
+                      : "cursor-pointer",
                   ].join(" ")}
                   style={{
+                    backgroundColor: "var(--color-bg-card)",
+                    borderColor: isActive ? "#697B55" : "var(--color-border)",
                     transform: `translateX(-50%) translateX(${offset * 78}%) translateZ(${-abs * 120}px) rotateY(${-offset * 30}deg)`,
                     opacity: abs > 1 ? 0 : isActive ? 1 : 0.55,
                     zIndex: 10 - abs,
                     pointerEvents: abs > 1 ? "none" : "auto",
                   }}
                 >
-                  <h3 className="text-xl font-bold leading-9 text-fg">
+                  <h3 className="text-xl font-bold leading-9" style={{ color: "var(--color-text-main)" }}>
                     {isArabic ? it.titleAr : it.titleEn}
                   </h3>
 
-                  <p className="mt-2 text-xs text-fg">
+                  <p className="mt-2 text-xs" style={{ color: "#697B55" }}>
                     {isArabic ? it.taglineAr : it.taglineEn}
                   </p>
 
-                  <p className="mt-3 text-xs leading-7 text-muted">
+                  <p className="mt-3 text-xs leading-7" style={{ color: "var(--color-text-muted)" }}>
                     {isArabic ? it.descriptionAr : it.descriptionEn}
                   </p>
 
-                  <h4 className="mb-4 mt-8 text-lg font-semibold text-fg">
+                  <h4 className="mb-4 mt-8 text-lg font-semibold" style={{ color: "var(--color-text-main)" }}>
                     {isArabic ? "المميزات الأساسية" : "Key Features"}
                   </h4>
 
                   <ul
-                    className={`space-y-3 text-xs text-muted ${
+                    className={`space-y-3 text-xs ${
                       isArabic ? "text-right" : "text-left"
                     }`}
+                    style={{ color: "var(--color-text-muted)" }}
                   >
                     {(isArabic ? it.featuresAr : it.featuresEn).map(
                       (feature, index) => (
-                        <li key={index}>{feature}</li>
+                        <li key={index} className="flex items-center gap-2">
+                          <span style={{ color: "#697B55" }}>✦</span> {feature}
+                        </li>
                       )
                     )}
                   </ul>
@@ -265,7 +270,13 @@ export default function NeckAccessories() {
                     <Link
                       href={it.demoHref}
                       tabIndex={isActive ? 0 : -1}
-                      className="block rounded-lg border border-line border-b-orange-400 bg-bg py-3.5 text-sm text-fg transition-colors hover:bg-surface-2"
+                      className="block rounded-lg border py-3.5 text-sm transition-colors"
+                      style={{
+                        backgroundColor: "var(--color-bg-primary)",
+                        borderColor: "var(--color-border)",
+                        borderBottomColor: "#697B55",
+                        color: "var(--color-text-main)"
+                      }}
                     >
                       {isArabic ? "اكتشف التقنية" : "Explore the Technology"}
                     </Link>
@@ -273,7 +284,13 @@ export default function NeckAccessories() {
                     <Link
                       href={it.howHref}
                       tabIndex={isActive ? 0 : -1}
-                      className="block rounded-lg border border-line border-b-sky-400 bg-bg py-3.5 text-sm text-fg transition-colors hover:bg-surface-2"
+                      className="block rounded-lg border py-3.5 text-sm transition-colors"
+                      style={{
+                        backgroundColor: "var(--color-bg-primary)",
+                        borderColor: "var(--color-border)",
+                        borderBottomColor: "#294B3B",
+                        color: "var(--color-text-main)"
+                      }}
                     >
                       {isArabic ? "كيف تعمل" : "How It Works"}
                     </Link>
@@ -289,7 +306,11 @@ export default function NeckAccessories() {
               onClick={() => go(-1)}
               disabled={active === 0}
               aria-label={isArabic ? "السابق" : "Previous"}
-              className="grid size-9 place-items-center rounded-full border border-line text-fg transition-colors hover:border-accent disabled:opacity-30"
+              className="grid size-9 place-items-center rounded-full border transition-colors disabled:opacity-30"
+              style={{
+                borderColor: "var(--color-border)",
+                color: "var(--color-text-main)"
+              }}
             >
               ‹
             </button>
@@ -308,10 +329,11 @@ export default function NeckAccessories() {
                   onClick={() => setActive(i)}
                   className={[
                     "size-3 rounded-full transition-all",
-                    i === active
-                      ? "scale-125 bg-highlight"
-                      : "bg-fg/80 hover:bg-fg",
+                    i === active ? "scale-125" : "opacity-50 hover:opacity-100",
                   ].join(" ")}
+                  style={{
+                    backgroundColor: i === active ? "#697B55" : "var(--color-text-muted)"
+                  }}
                 />
               ))}
             </div>
@@ -320,7 +342,11 @@ export default function NeckAccessories() {
               onClick={() => go(1)}
               disabled={active === items.length - 1}
               aria-label={isArabic ? "التالي" : "Next"}
-              className="grid size-9 place-items-center rounded-full border border-line text-fg transition-colors hover:border-accent disabled:opacity-30"
+              className="grid size-9 place-items-center rounded-full border transition-colors disabled:opacity-30"
+              style={{
+                borderColor: "var(--color-border)",
+                color: "var(--color-text-main)"
+              }}
             >
               ›
             </button>

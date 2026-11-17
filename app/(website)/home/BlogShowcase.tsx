@@ -29,7 +29,7 @@ const posts: Post[] = [
       "اكتشف كيف تساعد تجربة المكياج قبل الشراء العملاء على اختيار المنتجات بثقة، وامنح متجرك تجربة تسوق تفاعلية.",
     excerptEn:
       "Discover how virtual makeup try-on helps customers choose products with confidence and gives your store an interactive shopping experience.",
-    image: "/images/blog/makeup-prepurchase.jpg",
+    image: "/assets/slider/Untitled1.png",
     badge: "AI & Virtual Try-On",
     dateAr: "10 نوفمبر 2026",
     dateEn: "November 10, 2026",
@@ -44,7 +44,7 @@ const posts: Post[] = [
       "اكتشف كيف يغير الذكاء الاصطناعي صناعة التجميل من خلال التخصيص وتجربة المنتجات وتحسين تجربة العملاء.",
     excerptEn:
       "Discover how artificial intelligence is transforming the beauty industry through personalization, product try-on, and improved customer experiences.",
-    image: "/images/blog/ai-beauty.jpg",
+    image: "/assets/slider/Untitled3.png",
     badge: "AI & Virtual Try-On",
     dateAr: "26 أكتوبر 2026",
     dateEn: "October 26, 2026",
@@ -61,7 +61,7 @@ const posts: Post[] = [
       "اكتشف كيف تجمع NovaTech بين الذكاء الاصطناعي والواقع المعزز وتقنية Virtual Try-On لتقديم تجربة تفاعلية لاكتشاف درجات أحمر الشفاه.",
     excerptEn:
       "Discover how NovaTech combines artificial intelligence, augmented reality, and Virtual Try-On technology to create an interactive lipstick discovery experience.",
-    image: "/images/blog/lipstick-ai.jpg",
+    image: "/assets/slider/Untitled.png",
     badge: "AI & Virtual Try-On",
     dateAr: "26 سبتمبر 2026",
     dateEn: "September 26, 2026",
@@ -76,7 +76,7 @@ const posts: Post[] = [
       "دليل عملي لمطابقة درجات الشفاه مع لون البشرة والمناسبة، ومقارنة التشطيبات في ثوانٍ قبل الشراء.",
     excerptEn:
       "A practical guide to matching lipstick shades with skin tones and occasions, and comparing finishes in seconds before making a purchase.",
-    image: "/images/blog/lips-colors.jpg",
+    image: "/assets/slider/img11.jpg",
     badge: "AI & Virtual Try-On",
     dateAr: "12 أغسطس 2026",
     dateEn: "August 12, 2026",
