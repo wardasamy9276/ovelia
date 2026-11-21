@@ -155,6 +155,7 @@ const translations = {
       southSinai: "جنوب سيناء",
     },
   },
+
   en: {
     chooseBeauty: "Choose Your Beauty, Your Way",
     discover: "Explore our diverse lipstick collection, choose your favorite shade, and complete your order using your preferred method.",
@@ -302,11 +303,15 @@ const translations = {
 
 type TranslationKey = keyof typeof translations.ar;
 
+type TranslationValue =
+  | (typeof translations.ar)[TranslationKey]
+  | (typeof translations.en)[TranslationKey];
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
   toggleLanguage: () => void;
-  t: (key: TranslationKey) => (typeof translations.ar)[TranslationKey];
+  t: (key: TranslationKey) => TranslationValue;
   translations: typeof translations;
 }
 
@@ -335,7 +340,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguage((previous) => (previous === "ar" ? "en" : "ar"));
   };
 
-  const t = (key: TranslationKey) => translations[language][key];
+  const t = (key: TranslationKey): TranslationValue => {
+    return translations[language][key] as TranslationValue;
+  };
 
   return (
     <LanguageContext.Provider
