@@ -1,7 +1,7 @@
-
 import { LanguageProvider } from "./context/LanguageContext";
 import Navbar from "./sction/navbar/navbar";
 import Footer from "./sction/footer/footer";
+import ClientLayoutWrapper from "./(website)/home/ClientLayoutWrapper"; // استدعاء الملف الوسيط
 import "./globals.css";
 
 export default function RootLayout({
@@ -13,11 +13,19 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body>
         <LanguageProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <ClientLayoutWrapper>
+            <Navbar />
+            <main>{children}</main>
+
+  
+            <Footer />
+          </ClientLayoutWrapper>
         </LanguageProvider>
       </body>
     </html>
   );
 }
+
+
+
+

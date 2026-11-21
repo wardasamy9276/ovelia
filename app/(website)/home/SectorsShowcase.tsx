@@ -856,24 +856,389 @@
 //   );
 // }
 
+// ????????????????????????????????????????????
 
 
+// "use client";
 
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useState } from "react";
+// import { useLanguage } from "@/app/context/LanguageContext";
+
+// type Sector = {
+//   id: string;
+//   title: string;
+//   description: string;
+//   image: string;
+//   href: string;
+//   points: string[];
+// };
+
+// function FlipCard({
+//   sector,
+//   isArabic,
+// }: {
+//   sector: Sector;
+//   isArabic: boolean;
+// }) {
+//   const [flipped, setFlipped] = useState(false);
+
+//   return (
+//     <div
+//       className="sector-card group relative h-[490px] rounded-[24px] p-[2px]"
+//       onMouseEnter={() => setFlipped(true)}
+//       onMouseLeave={() => setFlipped(false)}
+//       onClick={(e) => {
+//         if (window.matchMedia("(hover: none)").matches) {
+//           if ((e.target as HTMLElement).closest("a")) return;
+//           setFlipped((prev) => !prev);
+//         }
+//       }}
+//     >
+//       {/* إطار متحرك هادئ */}
+//       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[24px]">
+//         <div className="sector-border absolute left-1/2 top-1/2 h-[220%] w-[220%]" />
+//       </div>
+
+//       {/* الحاوية الرئيسية */}
+//       <div className="relative h-full w-full rounded-[22px] bg-bg p-[3px] [perspective:1600px]">
+//         <div
+//           className={`sector-inner relative h-full w-full rounded-[19px] ${
+//             flipped ? "is-flipped" : ""
+//           }`}
+//         >
+//           {/* الوجه الأمامي */}
+//           <div className="sector-face sector-front">
+//             <div className="relative mx-4 mt-4 h-[230px] shrink-0 overflow-hidden rounded-2xl">
+//               <Image
+//                 src={sector.image}
+//                 alt={sector.title}
+//                 fill
+//                 sizes="(min-width:1024px) 25vw, 50vw"
+//                 className="object-cover transition-transform duration-700 group-hover:scale-105"
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+//             </div>
+
+//             <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+//               <h2 className="text-xl font-bold leading-9 text-foreground">
+//                 {sector.title}
+//               </h2>
+
+//               <p className="mt-3 text-sm leading-7 text-muted">
+//                 {sector.description}
+//               </p>
+
+//               <span className="mt-5 text-xs text-accent">
+//                 {isArabic
+//                   ? "مرري المؤشر لاكتشاف المزيد"
+//                   : "Hover to discover more"}
+//               </span>
+//             </div>
+//           </div>
+
+//           {/* الوجه الخلفي */}
+//           <div className="sector-face sector-back">
+//             <div className="relative h-[165px] shrink-0 overflow-hidden">
+//               <Image
+//                 src={sector.image}
+//                 alt={sector.title}
+//                 fill
+//                 sizes="(min-width:1024px) 25vw, 50vw"
+//                 className="object-cover"
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
+//             </div>
+
+//             <div
+//               className={`sector-back-content ${
+//                 isArabic ? "text-right" : "text-left"
+//               }`}
+//             >
+//               <div className="mb-3">
+//                 <span className="text-xs font-semibold tracking-wide text-accent">
+//                   {isArabic ? "تفاصيل القطاع" : "SECTOR DETAILS"}
+//                 </span>
+
+//                 <h2 className="mt-2 text-lg font-bold leading-8 text-foreground">
+//                   {sector.title}
+//                 </h2>
+
+//                 <p className="mt-2 text-sm leading-7 text-muted">
+//                   {sector.description}
+//                 </p>
+//               </div>
+
+//               <div className="mb-4 h-px w-full bg-black/10 dark:bg-white/10" />
+
+//               <div className="flex-1">
+//                 <h3 className="mb-3 text-sm font-bold text-foreground">
+//                   {isArabic ? "المميزات والخدمات" : "Features & Services"}
+//                 </h3>
+
+//                 <ul className="space-y-3">
+//                   {sector.points.map((point, index) => (
+//                     <li
+//                       key={point}
+//                       className="sector-point flex items-center gap-3 text-sm leading-6 text-foreground"
+//                       style={{ animationDelay: `${index * 100}ms` }}
+//                     >
+//                       <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-semibold text-accent">
+//                         {index + 1}
+//                       </span>
+
+//                       <span>{point}</span>
+//                     </li>
+//                   ))}
+//                 </ul>
+//               </div>
+
+//               <Link
+//                 href={sector.href}
+//                 className="mt-4 block w-full shrink-0 rounded-full bg-accent py-3 text-center text-sm font-semibold text-accent-fg transition-opacity hover:opacity-85"
+//                 onClick={(e) => e.stopPropagation()}
+//               >
+//                 {isArabic ? "جرّب الآن" : "Try Now"}
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       <style jsx>{`
+//         .sector-border {
+//           background: conic-gradient(
+//             from 0deg,
+//             transparent 0deg,
+//             var(--accent) 90deg,
+//             var(--border) 160deg,
+//             var(--accent) 220deg,
+//             transparent 300deg
+//           );
+//           animation: border-rotation 8s linear infinite;
+//         }
+
+//         .sector-inner {
+//           height: 100%;
+//           width: 100%;
+//           transform-style: preserve-3d;
+//           transition: transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1);
+//         }
+
+//         .sector-inner.is-flipped {
+//           transform: rotateY(180deg);
+//         }
+
+//         .sector-face {
+//           position: absolute;
+//           inset: 0;
+//           width: 100%;
+//           height: 100%;
+//           overflow: hidden;
+//           border-radius: 19px;
+//           border: 1px solid var(--border);
+//           background: var(--surface);
+//           display: flex;
+//           flex-direction: column;
+//           -webkit-backface-visibility: hidden;
+//           backface-visibility: hidden;
+//           isolation: isolate;
+//         }
+
+//         .sector-front {
+//           transform: rotateY(0deg);
+//           z-index: 2;
+//         }
+
+//         .sector-back {
+//           transform: rotateY(180deg);
+//           z-index: 1;
+//         }
+
+//         .sector-back-content {
+//           display: flex;
+//           flex: 1;
+//           min-height: 0;
+//           flex-direction: column;
+//           padding: 12px 22px 18px;
+//           background: var(--surface);
+//           overflow: hidden;
+//         }
+
+//         .sector-point {
+//           opacity: 0;
+//           animation: point-appear 450ms ease forwards;
+//         }
+
+//         @keyframes border-rotation {
+//           to {
+//             transform: translate(-50%, -50%) rotate(360deg);
+//           }
+//         }
+
+//         @keyframes point-appear {
+//           from {
+//             opacity: 0;
+//             transform: translateY(7px);
+//           }
+//           to {
+//             opacity: 1;
+//             transform: translateY(0);
+//           }
+//         }
+
+//         @media (hover: hover) {
+//           .sector-card:hover .sector-inner {
+//             transform: rotateY(180deg);
+//           }
+
+//           .sector-card:hover .sector-front {
+//             z-index: 1;
+//           }
+
+//           .sector-card:hover .sector-back {
+//             z-index: 2;
+//           }
+//         }
+
+//         @media (hover: none) {
+//           .sector-inner.is-flipped {
+//             transform: rotateY(180deg);
+//           }
+//         }
+
+//         @media (prefers-reduced-motion: reduce) {
+//           .sector-border {
+//             animation: none;
+//           }
+
+//           .sector-inner {
+//             transition: none;
+//           }
+
+//           .sector-point {
+//             animation: none;
+//             opacity: 1;
+//           }
+//         }
+//       `}</style>
+//     </div>
+//   );
+// }
+
+// export default function SectorsFlip() {
+//   const { language } = useLanguage();
+//   const isArabic = language === "ar";
+
+//   const sectors: Sector[] = [
+//     {
+//       id: "beauty",
+//       title: isArabic
+//         ? "الجمال ومستحضرات التجميل"
+//         : "Beauty & Cosmetics",
+//       description: isArabic
+//         ? "يجرّب العميل المكياج مباشرة على وجهه ويقارن الدرجات قبل الشراء."
+//         : "Customers can try makeup directly on their faces and compare different shades before making a purchase.",
+//       image: "/assets/slider/images6.jpg",
+//       href: "/sectors/beauty",
+//       points: isArabic
+//         ? ["مطابقة درجة البشرة", "مقارنة قبل وبعد", "حفظ الإطلالات"]
+//         : ["Skin Tone Matching", "Before & After Comparison", "Save Looks"],
+//     },
+//     {
+//       id: "jewelry",
+//       title: isArabic
+//         ? "المجوهرات والإكسسوارات"
+//         : "Jewelry & Accessories",
+//       description: isArabic
+//         ? "تجربة الخواتم والقلائد والأقراط والساعات في الوقت الحقيقي وتنسيقها معًا."
+//         : "Virtually try on rings, necklaces, earrings, and watches in real time, and mix and match different pieces.",
+//       image: "/assets/img/images13.jpg",
+//       href: "/sectors/jewelry",
+//       points: isArabic
+//         ? ["تتبع اليد والرقبة والأذن", "تنسيق عدة قطع", "مشاركة الصورة"]
+//         : ["Hand, Neck & Ear Tracking", "Mix & Match Items", "Share Your Look"],
+//     },
+//     {
+//       id: "ecommerce",
+//       title: isArabic
+//         ? "منصات التجارة الإلكترونية"
+//         : "E-Commerce Platforms",
+//       description: isArabic
+//         ? "دمج التجربة الافتراضية في صفحات المنتجات بسطر برمجي واحد."
+//         : "Integrate virtual try-on experiences into your product pages with a simple line of code.",
+//       image: "/assets/img/ava.webp",
+//       href: "/sectors/ecommerce",
+//       points: isArabic
+//         ? ["دمج بسطر واحد", "لوحة تحليلات", "متوافق مع المنصات الشائعة"]
+//         : ["One-Line Integration", "Analytics Dashboard", "Compatible with Popular Platforms"],
+//     },
+//     {
+//       id: "retail",
+//       title: isArabic
+//         ? "متاجر التجزئة والفروع"
+//         : "Retail & Multi-Branch Stores",
+//       description: isArabic
+//         ? "مرايا ذكية داخل الفروع بتجربة موحدة مع المتجر الإلكتروني."
+//         : "Smart mirrors inside physical stores provide a unified shopping experience connected to your online store.",
+//       image: "/assets/img/img-2.webp",
+//       href: "/sectors/retail",
+//       points: isArabic
+//         ? ["شاشات داخل الفرع", "مزامنة المخزون", "تقارير لكل فرع"]
+//         : ["In-Store Screens", "Inventory Synchronization", "Branch Reports"],
+//     },
+//   ];
+
+//   return (
+//     <section
+//       dir={isArabic ? "rtl" : "ltr"}
+//       lang={language}
+//       className="px-5 py-16"
+//     >
+//       <div className="mx-auto max-w-7xl">
+//         {/* العنوان */}
+//         <div className="mb-12 text-center">
+//           <span className="mb-4 inline-block text-sm font-medium tracking-widest text-accent">
+//             {isArabic ? "قطاعاتنا" : "OUR INDUSTRIES"}
+//           </span>
+
+//           <h1 className="text-3xl font-bold text-foreground sm:text-5xl">
+//             {isArabic
+//               ? "القطاعات التي نخدمها"
+//               : "Industries We Serve"}
+//           </h1>
+
+//           <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted">
+//             {isArabic
+//               ? "اكتشف كيف نعيد تعريف تجربة التسوق والتفاعل الرقمي من خلال حلول التكنولوجيا الذكية."
+//               : "Discover how we redefine shopping and digital interaction through innovative smart technology solutions."}
+//           </p>
+//         </div>
+
+//         {/* الكروت */}
+//         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+//           {sectors.map((sector) => (
+//             <FlipCard
+//               key={sector.id}
+//               sector={sector}
+//               isArabic={isArabic}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
-
-type Sector = {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  href: string;
-  points: string[];
-};
+import { getSectorsData, Sector } from "../home/data/SectorsShowcasesData"; // تأكد من مطابقة مسار الاستيراد لمكان ملف البيانات
 
 function FlipCard({
   sector,
@@ -1132,65 +1497,7 @@ function FlipCard({
 export default function SectorsFlip() {
   const { language } = useLanguage();
   const isArabic = language === "ar";
-
-  const sectors: Sector[] = [
-    {
-      id: "beauty",
-      title: isArabic
-        ? "الجمال ومستحضرات التجميل"
-        : "Beauty & Cosmetics",
-      description: isArabic
-        ? "يجرّب العميل المكياج مباشرة على وجهه ويقارن الدرجات قبل الشراء."
-        : "Customers can try makeup directly on their faces and compare different shades before making a purchase.",
-      image: "/assets/slider/images6.jpg",
-      href: "/sectors/beauty",
-      points: isArabic
-        ? ["مطابقة درجة البشرة", "مقارنة قبل وبعد", "حفظ الإطلالات"]
-        : ["Skin Tone Matching", "Before & After Comparison", "Save Looks"],
-    },
-    {
-      id: "jewelry",
-      title: isArabic
-        ? "المجوهرات والإكسسوارات"
-        : "Jewelry & Accessories",
-      description: isArabic
-        ? "تجربة الخواتم والقلائد والأقراط والساعات في الوقت الحقيقي وتنسيقها معًا."
-        : "Virtually try on rings, necklaces, earrings, and watches in real time, and mix and match different pieces.",
-      image: "/assets/img/images13.jpg",
-      href: "/sectors/jewelry",
-      points: isArabic
-        ? ["تتبع اليد والرقبة والأذن", "تنسيق عدة قطع", "مشاركة الصورة"]
-        : ["Hand, Neck & Ear Tracking", "Mix & Match Items", "Share Your Look"],
-    },
-    {
-      id: "ecommerce",
-      title: isArabic
-        ? "منصات التجارة الإلكترونية"
-        : "E-Commerce Platforms",
-      description: isArabic
-        ? "دمج التجربة الافتراضية في صفحات المنتجات بسطر برمجي واحد."
-        : "Integrate virtual try-on experiences into your product pages with a simple line of code.",
-      image: "/assets/img/ava.webp",
-      href: "/sectors/ecommerce",
-      points: isArabic
-        ? ["دمج بسطر واحد", "لوحة تحليلات", "متوافق مع المنصات الشائعة"]
-        : ["One-Line Integration", "Analytics Dashboard", "Compatible with Popular Platforms"],
-    },
-    {
-      id: "retail",
-      title: isArabic
-        ? "متاجر التجزئة والفروع"
-        : "Retail & Multi-Branch Stores",
-      description: isArabic
-        ? "مرايا ذكية داخل الفروع بتجربة موحدة مع المتجر الإلكتروني."
-        : "Smart mirrors inside physical stores provide a unified shopping experience connected to your online store.",
-      image: "/assets/img/img-2.webp",
-      href: "/sectors/retail",
-      points: isArabic
-        ? ["شاشات داخل الفرع", "مزامنة المخزون", "تقارير لكل فرع"]
-        : ["In-Store Screens", "Inventory Synchronization", "Branch Reports"],
-    },
-  ];
+  const sectors = getSectorsData(isArabic);
 
   return (
     <section
@@ -1206,9 +1513,7 @@ export default function SectorsFlip() {
           </span>
 
           <h1 className="text-3xl font-bold text-foreground sm:text-5xl">
-            {isArabic
-              ? "القطاعات التي نخدمها"
-              : "Industries We Serve"}
+            {isArabic ? "القطاعات التي نخدمها" : "Industries We Serve"}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted">

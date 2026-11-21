@@ -117,7 +117,7 @@ export default function HowItWorks() {
 
           <h2 className="text-center text-2xl font-semibold text-fg sm:text-4xl">
             {isArabic
-              ? "Orvelia"
+              ? "Orvelia أورفيليا"
               : "How Does the AI Virtual Experience Work?"}
           </h2>
 

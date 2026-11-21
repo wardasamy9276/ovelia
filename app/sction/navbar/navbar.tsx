@@ -290,31 +290,31 @@ const menus: Menu[] = [
       { ar: "الصيانة والتحديث", en: "Maintenance & Updates" }
     ]
   },
-  {
-    title: { ar: "التقنيات", en: "Technologies" },
-    href: "/technologies",
-    items: [
-      { ar: "الذكاء الاصطناعي", en: "Artificial Intelligence" },
-      { ar: "الواقع المعزز", en: "Augmented Reality" },
-      { ar: "الواقع الافتراضي", en: "Virtual Reality" },
-      { ar: "التعلم الآلي", en: "Machine Learning" },
-      { ar: "التعلم العميق", en: "Deep Learning" },
-      { ar: "الرؤية الحاسوبية", en: "Computer Vision" },
-      { ar: "تحليل الصور", en: "Image Analysis" },
-      { ar: "التعرف على الوجه", en: "Face Recognition" },
-      { ar: "التعرف على الألوان", en: "Color Recognition" },
-      { ar: "تحليل ملامح الوجه", en: "Facial Features Detection" },
-      { ar: "تقنيات تجربة المكياج", en: "Virtual Makeup Technology" },
-      { ar: "تقنيات تجربة العدسات", en: "Virtual Lens Technology" },
-      { ar: "تحليل البشرة الذكي", en: "AI Skin Technology" },
-      { ar: "تقنية ثلاثية الأبعاد", en: "3D Technology" },
-      { ar: "تحليل البيانات", en: "Data Analytics" },
-      { ar: "الحوسبة السحابية", en: "Cloud Computing" },
-      { ar: "إنترنت الأشياء", en: "Internet of Things" },
-      { ar: "الأتمتة الذكية", en: "Intelligent Automation" },
-      { ar: "تقنيات المستقبل", en: "Future Technologies" }
-    ]
-  },
+{
+  title: { ar: "التقنيات", en: "Technologies" },
+  href: "/technologies",
+  items: [
+    { ar: "تصميم التيجان", en: "Crown Design" },
+    { ar: "تصميم إكسسوارات الشعر", en: "Hair Accessories Design" },
+    { ar: "تقنيات التصميم ثلاثي الأبعاد", en: "3D Design Technology" },
+    { ar: "تجربة التيجان افتراضيًا", en: "Virtual Crown Try-On" },
+    { ar: "تجربة الإكسسوارات افتراضيًا", en: "Virtual Accessories Try-On" },
+    { ar: "الواقع المعزز", en: "Augmented Reality" },
+    { ar: "الذكاء الاصطناعي", en: "Artificial Intelligence" },
+    { ar: "التعرف على شكل الوجه", en: "Face Shape Recognition" },
+    { ar: "تحليل ملامح الوجه", en: "Facial Features Analysis" },
+    { ar: "اختيار الإكسسوارات المناسبة", en: "Accessories Recommendation" },
+    { ar: "تنسيق ألوان الإكسسوارات", en: "Accessories Color Matching" },
+    { ar: "تصميم تيجان العرائس", en: "Bridal Crown Design" },
+    { ar: "تصميم إكسسوارات المناسبات", en: "Special Occasion Accessories" },
+    { ar: "تقنيات الأحجار الكريمة", en: "Gemstone Technology" },
+    { ar: "تقنيات اللؤلؤ والكريستال", en: "Pearl and Crystal Technology" },
+    { ar: "التصميم حسب الطلب", en: "Custom Design Technology" },
+    { ar: "معاينة المنتجات ثلاثية الأبعاد", en: "3D Product Visualization" },
+    { ar: "التجارة الإلكترونية الذكية", en: "Smart E-Commerce" },
+    { ar: "تقنيات المستقبل في عالم الإكسسوارات", en: "Future Accessories Technologies" }
+  ]
+},
   {
     title: { ar: "الحلول", en: "Solutions" },
     href: "/solutions",
@@ -399,10 +399,12 @@ export default function Navbar() {
   const direction = isArabic ? "rtl" : "ltr";
   const locale = language;
 
-  const getPath = (path: string) => {
-    return `/${locale}${path === "/" ? "" : path}`;
-  };
-
+  // const getPath = (path: string) => {
+  //   return `/${locale}${path === "/" ? "" : path}`;
+  // };
+const getPath = (path: string) => {
+  return path;
+};
   const mainLinks = [
     { ar: "الرئيسية", en: "Home", href: "/" },
     { ar: "من نحن", en: "About Us", href: "/about" },

@@ -4,9 +4,16 @@
 /* تفعيل Dark Mode */
 @custom-variant dark (&:where(.dark, .dark *));
 
+
+
+
+.luxury-font {
+  font-family: var(--font-playfair), serif;
+}
 /* =========================
    LIGHT MODE
 ========================= */
+
 :root {
   --abyss-green: #054340;
   --sunkissed-beige: #E9AC5D;
@@ -155,4 +162,30 @@ body::-webkit-scrollbar {
 .beauty-label-animation {
   display: inline-block;
   animation: beautyLabel 2.5s ease-in-out infinite;
+}
+
+
+@keyframes partners-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partners-marquee {
+  animation: partners-marquee 35s linear infinite;
+  width: max-content;
+}
+
+.partners-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee {
+    animation: none;
+  }
 }

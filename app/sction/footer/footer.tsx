@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
+import  PartnersMarquee  from "../../(website)/PartnersMarquee/PartnersMarquee"
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -80,6 +81,7 @@ export default function Footer() {
       dir={isArabic ? "rtl" : "ltr"}
       className="relative mt-20 overflow-hidden border-t border-white/10 bg-[#020609] text-white"
     >
+          <PartnersMarquee />
       {/* TOP CTA */}
 
       <div className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-[#071626] to-[#020609] px-5 py-16 text-center">

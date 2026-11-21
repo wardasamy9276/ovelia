@@ -11,7 +11,8 @@ export default function Hero() {
   return (
     <section
       dir={isArabic ? "rtl" : "ltr"}
-      className="relative isolate min-h-[750px] overflow-hidden bg-[#f8fcfb] text-[#102c2b] transition-colors duration-500 dark:bg-[#071716] dark:text-white"
+      className="relative isolate min-h-[750px] overflow-hidden bg-[#f8fcfb] text-[#102c2b] 
+      transition-colors duration-500 dark:bg-[#071716] dark:text-white   "
     >
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -82,7 +83,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
 
             <Link
-              href={isArabic ? "/ar/beauty" : "/en/beauty"}
+           href="/beauty"
               className="group inline-flex items-center gap-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 font-bold text-white shadow-xl shadow-emerald-500/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/35"
             >
               {isArabic ? "اكتشفي عالم الجمال" : "Discover Beauty"}
@@ -136,6 +137,11 @@ export default function Hero() {
         </div>
 
         {/* VISUAL SIDE */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+
         <div className="relative mx-auto flex min-h-[570px] w-full max-w-[580px] items-center justify-center">
 
           {/* Outer Orbit */}
@@ -234,6 +240,11 @@ export default function Hero() {
           </span>
 
         </div>
+              {/* VISUAL SIDE */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
+        {/* الصورههههههههههههههههههههههههههههههههههه */}
       </div>
 
       {/* Bottom Gradient Line */}
