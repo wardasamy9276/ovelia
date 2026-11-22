@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 type MenuItem = {
@@ -71,8 +71,8 @@ const menus: Menu[] = [
       { ar: "منتجات العناية بالشعر", en: "Hair Care Products" },
       { ar: "العروض والخصومات", en: "Offers & Discounts" },
       { ar: "المنتجات الأكثر مبيعاً", en: "Best Sellers" },
-      { ar: "أحدث المنتجات", en: "New Arrivals" }
-    ]
+      { ar: "أحدث المنتجات", en: "New Arrivals" },
+    ],
   },
   {
     title: { ar: "العيون والرموش", en: "Eyes & Lashes" },
@@ -107,8 +107,8 @@ const menus: Menu[] = [
       { ar: "تحليل شكل العين", en: "Eye Shape Analysis" },
       { ar: "اختيار الرموش المناسبة", en: "Lash Style Finder" },
       { ar: "اختيار الماسكارا المناسبة", en: "Mascara Finder" },
-      { ar: "اختيار الآيلاينر المناسب", en: "Eyeliner Finder" }
-    ]
+      { ar: "اختيار الآيلاينر المناسب", en: "Eyeliner Finder" },
+    ],
   },
   {
     title: { ar: "المكياج", en: "Makeup" },
@@ -143,8 +143,8 @@ const menus: Menu[] = [
       { ar: "دليل درجات الفاونديشن", en: "Foundation Shade Guide" },
       { ar: "دليل ألوان أحمر الشفاه", en: "Lipstick Color Guide" },
       { ar: "تنسيق المكياج", en: "Makeup Styling" },
-      { ar: "إطلالات المكياج الجاهزة", en: "Makeup Looks" }
-    ]
+      { ar: "إطلالات المكياج الجاهزة", en: "Makeup Looks" },
+    ],
   },
   {
     title: { ar: "البشرة والعناية", en: "Skincare" },
@@ -175,8 +175,8 @@ const menus: Menu[] = [
       { ar: "روتين العناية الأسبوعي", en: "Weekly Skincare Routine" },
       { ar: "اختبار نوع البشرة", en: "Skin Type Test" },
       { ar: "اختبار حساسية البشرة", en: "Skin Sensitivity Test" },
-      { ar: "دليل منتجات البشرة", en: "Skincare Guide" }
-    ]
+      { ar: "دليل منتجات البشرة", en: "Skincare Guide" },
+    ],
   },
   {
     title: { ar: "الشعر والجمال", en: "Hair & Beauty" },
@@ -201,8 +201,8 @@ const menus: Menu[] = [
       { ar: "سيروم الشعر", en: "Hair Serum" },
       { ar: "العناية بفروة الرأس", en: "Scalp Care" },
       { ar: "أدوات تصفيف الشعر", en: "Hair Styling Tools" },
-      { ar: "إكسسوارات الشعر", en: "Hair Accessories" }
-    ]
+      { ar: "إكسسوارات الشعر", en: "Hair Accessories" },
+    ],
   },
   {
     title: { ar: "أدوات الواقع المعزز", en: "AR Tools" },
@@ -229,8 +229,8 @@ const menus: Menu[] = [
       { ar: "معاينة المنتجات", en: "Product Preview" },
       { ar: "التجربة ثلاثية الأبعاد", en: "3D Experience" },
       { ar: "غرف القياس الافتراضية", en: "Virtual Fitting Rooms" },
-      { ar: "استوديو الواقع المعزز", en: "AR Studio" }
-    ]
+      { ar: "استوديو الواقع المعزز", en: "AR Studio" },
+    ],
   },
   {
     title: { ar: "الذكاء الاصطناعي", en: "AI Beauty Tools" },
@@ -260,107 +260,29 @@ const menus: Menu[] = [
       { ar: "مساعد اختيار المكياج", en: "Makeup Recommendation AI" },
       { ar: "تحليل الصور", en: "Image Analysis" },
       { ar: "مولد الصور بالذكاء الاصطناعي", en: "AI Image Generator" },
-      { ar: "المساعد الذكي", en: "Smart Assistant" }
-    ]
+      { ar: "المساعد الذكي", en: "Smart Assistant" },
+    ],
   },
   {
-    title: { ar: "الخدمات", en: "Services" },
-    href: "/services",
+    title: { ar: "التقنيات", en: "Technologies" },
+    href: "/technologies",
     items: [
-      { ar: "تجربة المكياج الافتراضية", en: "Virtual Makeup Experience" },
-      { ar: "تجربة المنتجات", en: "Product Try-On" },
-      { ar: "استشارات التجميل", en: "Beauty Consultations" },
-      { ar: "تحليل البشرة", en: "Skin Analysis" },
-      { ar: "اختيار المنتجات المناسبة", en: "Product Matching" },
-      { ar: "تنسيق إطلالات المكياج", en: "Makeup Styling" },
-      { ar: "تصميم المواقع", en: "Website Design" },
-      { ar: "تطوير المتاجر الإلكترونية", en: "E-commerce Development" },
-      { ar: "تطوير تطبيقات الويب", en: "Web App Development" },
-      { ar: "تطوير تطبيقات الهاتف", en: "Mobile App Development" },
-      { ar: "تصميم واجهات المستخدم", en: "UI Design" },
-      { ar: "تجربة المستخدم", en: "UX Design" },
-      { ar: "التسويق الإلكتروني", en: "Digital Marketing" },
-      { ar: "إدارة المحتوى", en: "Content Management" },
-      { ar: "تحسين محركات البحث", en: "SEO" },
-      { ar: "إدارة الحملات الإعلانية", en: "Advertising Campaigns" },
-      { ar: "الهوية البصرية", en: "Visual Identity" },
-      { ar: "تصميم الشعارات", en: "Logo Design" },
-      { ar: "تصميم الجرافيك", en: "Graphic Design" },
-      { ar: "الدعم الفني", en: "Technical Support" },
-      { ar: "الصيانة والتحديث", en: "Maintenance & Updates" }
-    ]
+      { ar: "تصميم التيجان", en: "Crown Design" },
+      { ar: "تصميم إكسسوارات الشعر", en: "Hair Accessories Design" },
+      { ar: "تقنيات التصميم ثلاثي الأبعاد", en: "3D Design Technology" },
+      { ar: "تجربة التيجان افتراضيًا", en: "Virtual Crown Try-On" },
+      { ar: "تجربة الإكسسوارات افتراضيًا", en: "Virtual Accessories Try-On" },
+      { ar: "الواقع المعزز", en: "Augmented Reality" },
+      { ar: "التعرف على شكل الوجه", en: "Face Shape Recognition" },
+      { ar: "تحليل ملامح الوجه", en: "Facial Features Analysis" },
+      { ar: "اختيار الإكسسوارات المناسبة", en: "Accessories Recommendation" },
+      { ar: "تنسيق ألوان الإكسسوارات", en: "Accessories Color Matching" },
+      { ar: "تصميم تيجان العرائس", en: "Bridal Crown Design" },
+      { ar: "تصميم إكسسوارات المناسبات", en: "Special Occasion Accessories" },
+      { ar: "تقنيات المستقبل في عالم الإكسسوارات", en: "Future Accessories Technologies" },
+    ],
   },
-{
-  title: { ar: "التقنيات", en: "Technologies" },
-  href: "/technologies",
-  items: [
-    { ar: "تصميم التيجان", en: "Crown Design" },
-    { ar: "تصميم إكسسوارات الشعر", en: "Hair Accessories Design" },
-    { ar: "تقنيات التصميم ثلاثي الأبعاد", en: "3D Design Technology" },
-    { ar: "تجربة التيجان افتراضيًا", en: "Virtual Crown Try-On" },
-    { ar: "تجربة الإكسسوارات افتراضيًا", en: "Virtual Accessories Try-On" },
-    { ar: "الواقع المعزز", en: "Augmented Reality" },
-    { ar: "الذكاء الاصطناعي", en: "Artificial Intelligence" },
-    { ar: "التعرف على شكل الوجه", en: "Face Shape Recognition" },
-    { ar: "تحليل ملامح الوجه", en: "Facial Features Analysis" },
-    { ar: "اختيار الإكسسوارات المناسبة", en: "Accessories Recommendation" },
-    { ar: "تنسيق ألوان الإكسسوارات", en: "Accessories Color Matching" },
-    { ar: "تصميم تيجان العرائس", en: "Bridal Crown Design" },
-    { ar: "تصميم إكسسوارات المناسبات", en: "Special Occasion Accessories" },
-    { ar: "تقنيات الأحجار الكريمة", en: "Gemstone Technology" },
-    { ar: "تقنيات اللؤلؤ والكريستال", en: "Pearl and Crystal Technology" },
-    { ar: "التصميم حسب الطلب", en: "Custom Design Technology" },
-    { ar: "معاينة المنتجات ثلاثية الأبعاد", en: "3D Product Visualization" },
-    { ar: "التجارة الإلكترونية الذكية", en: "Smart E-Commerce" },
-    { ar: "تقنيات المستقبل في عالم الإكسسوارات", en: "Future Accessories Technologies" }
-  ]
-},
-  {
-    title: { ar: "الحلول", en: "Solutions" },
-    href: "/solutions",
-    items: [
-      { ar: "حلول قطاع التجميل", en: "Beauty Industry Solutions" },
-      { ar: "حلول متاجر المكياج", en: "Makeup Store Solutions" },
-      { ar: "حلول متاجر العدسات", en: "Lens Store Solutions" },
-      { ar: "حلول متاجر مستحضرات التجميل", en: "Cosmetics Store Solutions" },
-      { ar: "حلول الصالونات", en: "Salon Solutions" },
-      { ar: "حلول مراكز التجميل", en: "Beauty Center Solutions" },
-      { ar: "حلول العلامات التجارية", en: "Brand Solutions" },
-      { ar: "حلول التجارة الإلكترونية", en: "E-commerce Solutions" },
-      { ar: "حلول الشركات", en: "Corporate Solutions" },
-      { ar: "حلول المؤسسات", en: "Enterprise Solutions" },
-      { ar: "حلول التسويق", en: "Marketing Solutions" },
-      { ar: "حلول الأعمال", en: "Business Solutions" },
-      { ar: "حلول التحول الرقمي", en: "Digital Transformation" },
-      { ar: "حلول الذكاء الاصطناعي", en: "AI Solutions" },
-      { ar: "حلول الواقع المعزز", en: "AR Solutions" }
-    ]
-  },
-  {
-    title: { ar: "الباقات", en: "Packages" },
-    href: "/packages",
-    items: [
-      { ar: "جميع الباقات", en: "All Packages" },
-      { ar: "الباقة المجانية", en: "Free Package" },
-      { ar: "الباقة الأساسية", en: "Basic Package" },
-      { ar: "الباقة الاحترافية", en: "Professional Package" },
-      { ar: "الباقة المؤسسية", en: "Enterprise Package" },
-      { ar: "باقة التجميل", en: "Beauty Package" },
-      { ar: "باقة المكياج الافتراضي", en: "Virtual Makeup Package" },
-      { ar: "باقة تجربة العدسات", en: "Lens Try-On Package" },
-      { ar: "باقة الذكاء الاصطناعي", en: "AI Package" },
-      { ar: "باقة الواقع المعزز", en: "AR Package" },
-      { ar: "باقة المتاجر الإلكترونية", en: "E-commerce Package" },
-      { ar: "باقة الشركات", en: "Corporate Package" },
-      { ar: "باقة التسويق", en: "Marketing Package" },
-      { ar: "باقة الأعمال", en: "Business Package" },
-      { ar: "باقة المبتدئين", en: "Starter Package" },
-      { ar: "باقة النمو", en: "Growth Package" },
-      { ar: "الباقة السنوية", en: "Annual Package" },
-      { ar: "الباقة الشهرية", en: "Monthly Package" },
-      { ar: "الباقات المخصصة", en: "Custom Packages" }
-    ]
-  }
+
 ];
 
 export default function Navbar() {
@@ -375,10 +297,15 @@ export default function Navbar() {
   const [searchValue, setSearchValue] = useState("");
   const [mobileSubMenu, setMobileSubMenu] = useState<number | null>(null);
 
+  const headerRef = useRef<HTMLElement | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
     const savedTheme = localStorage.getItem("orvelia-theme");
-    if (savedTheme) {
+    if (savedTheme === "dark" || savedTheme === "light") {
       setIsDark(savedTheme === "dark");
+    } else {
+      setIsDark(document.documentElement.classList.contains("dark"));
     }
     setMounted(true);
   }, []);
@@ -391,25 +318,66 @@ export default function Navbar() {
     localStorage.setItem("orvelia-theme", isDark ? "dark" : "light");
   }, [isDark, mounted]);
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setActiveMenu(null);
+        setSearchOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveMenu(null);
+        setSearchOpen(false);
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
   };
 
+  const handleMenuEnter = (index: number) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    setActiveMenu(index);
+  };
+
+  const handleMenuLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 120);
+  };
+
   const isArabic = language === "ar";
   const direction = isArabic ? "rtl" : "ltr";
-  const locale = language;
 
-  // const getPath = (path: string) => {
-  //   return `/${locale}${path === "/" ? "" : path}`;
-  // };
-const getPath = (path: string) => {
-  return path;
-};
+  const getPath = (path: string) => {
+    return path;
+  };
+
   const mainLinks = [
     { ar: "الرئيسية", en: "Home", href: "/" },
     { ar: "من نحن", en: "About Us", href: "/about" },
     { ar: "المدونة", en: "Blog", href: "/blog" },
-    { ar: "اتصل بنا", en: "Contact Us", href: "/contact" }
+    { ar: "اتصل بنا", en: "Contact Us", href: "/contact" },
   ];
 
   const text = {
@@ -420,6 +388,7 @@ const getPath = (path: string) => {
       ? "ابحث عن منتج أو خدمة أو تقنية..."
       : "Search for a product, service or technology...",
     searchLabel: isArabic ? "بحث" : "Search",
+    clearSearch: isArabic ? "مسح البحث" : "Clear search",
     language: isArabic ? "English" : "العربية",
     login: isArabic ? "تسجيل الدخول" : "Login",
     demo: isArabic ? "متجر العرض التوضيحي" : "Demo Store",
@@ -428,7 +397,7 @@ const getPath = (path: string) => {
     main: isArabic ? "الروابط الرئيسية" : "Main Links",
     close: isArabic ? "إغلاق" : "Close",
     darkMode: isArabic ? "الوضع الداكن" : "Dark Mode",
-    lightMode: isArabic ? "الوضع الفاتح" : "Light Mode"
+    lightMode: isArabic ? "الوضع الفاتح" : "Light Mode",
   };
 
   const closeMenus = () => {
@@ -437,13 +406,15 @@ const getPath = (path: string) => {
     setMobileSubMenu(null);
   };
 
+  const normalizedSearch = searchValue.trim().toLowerCase();
+
   const filteredMenus = menus.map((menu) => ({
     ...menu,
-    items: menu.items.filter((item) =>
-      `${item.ar} ${item.en}`
-        .toLowerCase()
-        .includes(searchValue.toLowerCase())
-    )
+    items: normalizedSearch
+      ? menu.items.filter((item) =>
+          `${item.ar} ${item.en}`.toLowerCase().includes(normalizedSearch)
+        )
+      : [],
   }));
 
   const themeButton = (
@@ -467,7 +438,8 @@ const getPath = (path: string) => {
   );
 
   return (
- <header
+    <header
+      ref={headerRef}
       dir={direction}
       className={`sticky top-0 z-50 w-full border-b shadow-2xl backdrop-blur-xl transition-colors duration-300 ${
         isDark
@@ -493,12 +465,14 @@ const getPath = (path: string) => {
         <div className="hidden items-center rounded-full bg-current/10 p-1 lg:flex">
           <Link
             href={getPath("/")}
+            onClick={closeMenus}
             className="rounded-full bg-gradient-to-r from-green-500/20 to-cyan-500/20 px-6 py-3 font-bold text-green-500"
           >
             {text.tech}
           </Link>
           <Link
             href={getPath("/")}
+            onClick={closeMenus}
             className="px-5 py-3 font-bold text-cyan-500"
           >
             {text.com}
@@ -509,11 +483,12 @@ const getPath = (path: string) => {
         <div className="hidden items-center gap-4 md:flex">
           <button
             type="button"
-            onClick={() => setSearchOpen(!searchOpen)}
+            onClick={() => setSearchOpen((prev) => !prev)}
             className={`text-2xl transition hover:text-cyan-400 ${
               isDark ? "text-gray-300" : "text-slate-600"
             }`}
             aria-label={text.searchLabel}
+            aria-expanded={searchOpen}
           >
             ⌕
           </button>
@@ -532,6 +507,7 @@ const getPath = (path: string) => {
 
           <Link
             href={getPath("/login")}
+            onClick={closeMenus}
             className={`rounded-full border px-6 py-3 transition hover:border-cyan-400 hover:text-cyan-500 ${
               isDark ? "border-white/10" : "border-slate-300"
             }`}
@@ -541,6 +517,7 @@ const getPath = (path: string) => {
 
           <Link
             href={getPath("/demo")}
+            onClick={closeMenus}
             className="rounded-full border border-green-400 px-6 py-3 text-cyan-500 transition hover:bg-green-400/10"
           >
             {text.demo}
@@ -550,9 +527,9 @@ const getPath = (path: string) => {
         {/* MOBILE BUTTON */}
         <button
           type="button"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => setMobileOpen((prev) => !prev)}
           className="text-3xl text-green-500 md:hidden"
-          aria-label={text.openMenu}
+          aria-label={mobileOpen ? text.close : text.openMenu}
           aria-expanded={mobileOpen}
         >
           {mobileOpen ? "✕" : "☰"}
@@ -572,6 +549,7 @@ const getPath = (path: string) => {
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder={text.search}
+              aria-label={text.searchLabel}
               className={`w-full rounded-xl border border-cyan-400/30 px-5 py-3 outline-none transition focus:border-cyan-400 ${
                 isDark
                   ? "bg-[#111827] text-white placeholder:text-gray-400"
@@ -582,6 +560,7 @@ const getPath = (path: string) => {
               <button
                 type="button"
                 onClick={() => setSearchValue("")}
+                aria-label={text.clearSearch}
                 className="absolute top-1/2 -translate-y-1/2 text-gray-400 hover:text-cyan-500"
                 style={isArabic ? { left: "18px" } : { right: "18px" }}
               >
@@ -590,7 +569,7 @@ const getPath = (path: string) => {
             )}
           </div>
 
-          {searchValue && (
+          {normalizedSearch && (
             <div
               className={`mt-4 max-h-[350px] overflow-y-auto rounded-xl border p-3 ${
                 isDark
@@ -632,6 +611,7 @@ const getPath = (path: string) => {
 
       {/* DESKTOP NAVIGATION */}
       <nav
+        aria-label={text.main}
         className={`hidden border-t md:block ${
           isDark ? "border-white/10" : "border-slate-200"
         }`}
@@ -645,6 +625,7 @@ const getPath = (path: string) => {
             <Link
               key={link.href}
               href={getPath(link.href)}
+              onClick={closeMenus}
               className={`rounded-xl px-4 py-2 text-sm font-semibold transition duration-300 hover:bg-green-400/10 hover:text-green-500 ${
                 isDark ? "text-gray-300" : "text-slate-700"
               }`}
@@ -659,11 +640,12 @@ const getPath = (path: string) => {
             <div
               key={menu.href}
               className="relative"
-              onMouseEnter={() => setActiveMenu(index)}
-              onMouseLeave={() => setActiveMenu(null)}
+              onMouseEnter={() => handleMenuEnter(index)}
+              onMouseLeave={handleMenuLeave}
             >
               <button
                 type="button"
+                aria-expanded={activeMenu === index}
                 onClick={() =>
                   setActiveMenu(activeMenu === index ? null : index)
                 }
@@ -747,6 +729,7 @@ const getPath = (path: string) => {
       {/* MOBILE MENU */}
       {mobileOpen && (
         <nav
+          aria-label={text.openMenu}
           className={`max-h-[75vh] overflow-y-auto border-t p-4 md:hidden ${
             isDark ? "border-white/10" : "border-slate-200"
           }`}
@@ -794,9 +777,15 @@ const getPath = (path: string) => {
               }`}
             >
               {menus.map((menu, index) => (
-                <div key={menu.href} className="border-b last:border-none">
+                <div
+                  key={menu.href}
+                  className={`border-b last:border-none ${
+                    isDark ? "border-white/10" : "border-slate-200"
+                  }`}
+                >
                   <button
                     type="button"
+                    aria-expanded={mobileSubMenu === index}
                     onClick={() =>
                       setMobileSubMenu(mobileSubMenu === index ? null : index)
                     }

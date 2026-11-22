@@ -13,9 +13,11 @@ import DevelopmentSteps from "./(website)/home/DevelopmentSteps"
 import NeckAccessories from "./(website)/home/NeckAccessories"
 import BlogShowcase from  "./(website)/home/BlogShowcase"
 import  BeautyExperience from "./(website)/home/BeautyExperience"
+// import HeroAnimation from "./(website)/home/HeroAnimation";
 function page() {
   return (
     <div>
+      {/* <HeroAnimation /> */}
       <Hore />
       {/* <ExperienceSection  /> */}
          <BeautyExperience />

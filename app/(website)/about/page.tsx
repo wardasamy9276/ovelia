@@ -8,6 +8,7 @@ import AboutStandardsSectio from "./AboutStandardsSection"
 import NeckAccessoriesShowcase from "./NeckAccessoriesShowcase"
 import    TechnologySection  from "../home/TechnologySection"
 // import BeautyExperiencePortal from "./BeautyExperiencePortal"
+import BlushOverviewSection from "./BlushOverviewSection"
 
 
 function page() {
@@ -15,6 +16,7 @@ function page() {
     <div>
    <AboutHeroSection />
     <TechnologySection />
+    <BlushOverviewSection />
    {/* <BeautyExperiencePortal /> */}
    <AboutValuesSection/>
    <AboutJourneySection/>

@@ -1,19 +1,37 @@
 "use client";
 
-import { useState } from "react";
-import SplashScreen from "./SplashScreen"; // عدلي المسار حسب مكان حفظ ملف الوردة اللي فوق
+import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import SplashScreen from "./SplashScreen";
+import AnimatedSite from "@/app/components/AnimatedSite";
+import Navbar from "@/app/sction/navbar/navbar";
+import Footer from "@/app/sction/footer/footer";
 
 export default function ClientLayoutWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const isDashboard = pathname?.startsWith("/dashboard");
+
   const [showSplash, setShowSplash] = useState(true);
+
+  const shouldShowSplash = showSplash && !isDashboard;
 
   return (
     <>
-      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
-      {!showSplash && children}
+      {shouldShowSplash && (
+        <SplashScreen onFinish={() => setShowSplash(false)} />
+      )}
+
+      {!shouldShowSplash && (
+        <AnimatedSite>
+          {!isDashboard && <Navbar />}
+          <main>{children}</main>
+          {!isDashboard && <Footer />}
+        </AnimatedSite>
+      )}
     </>
   );
 }
