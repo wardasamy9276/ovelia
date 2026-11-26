@@ -94,14 +94,17 @@ const beautyPortalData = {
     support: "Smart Support",
   },
 };
-
+// /virtual-try-on/accessories
+// nails اللظافؤ 
+// /virtual-try-on/lenses
+// /virtual-try-on/matching"
 const centerItems = [
-  { key: "makeup" as const, icon: WandSparkles, href: "/virtual-try-on/makeup" },
-  { key: "hair" as const, icon: Sparkles, href: "/virtual-try-on/hair" },
-  { key: "accessories" as const, icon: Gem, href: "/virtual-try-on/accessories" },
-  { key: "nails" as const, icon: Heart, href: "/virtual-try-on/nails" },
-  { key: "lenses" as const, icon: Glasses, href: "/virtual-try-on/lenses" },
-  { key: "matching" as const, icon: ShoppingBag, href: "/virtual-try-on/matching" },
+  { key: "makeup" as const, icon: WandSparkles, href: "/makeup1" },
+  { key: "hair" as const, icon: Sparkles, href: "/makeup2" },
+  { key: "accessories" as const, icon: Gem, href: "/makeup3" },
+  { key: "nails" as const, icon: Heart, href: "/makeup4" },
+  { key: "lenses" as const, icon: Glasses, href: "/makeup5" },
+  { key: "matching" as const, icon: ShoppingBag, href: "/makeup6" },
 ];
 
 interface PortalCardProps {

@@ -6,7 +6,7 @@ import BeautyCategories from "./(website)/home/BeautyCategories"
 import BeautyIntro from "./(website)/home/BeautyFeaturesSection"
 import HowItWorksSection from "./(website)/home/HowItWorksSection"
 import SectorsShowcases from "./(website)/home/SectorsShowcase"
-import TechnologySection from "./(website)/home/TechnologySection"
+
 import ExperienceJourney from "./(website)/home/ExperienceJourney"
 import HowItWorks from "./(website)/home/HowItWorks"
 import DevelopmentSteps from "./(website)/home/DevelopmentSteps"
